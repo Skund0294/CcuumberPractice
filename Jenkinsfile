@@ -13,14 +13,11 @@ pipeline{
 		echo 'Running the clean and build stage.'
 		}
 		}
-		stage("Install Dependencies"){
-		steps{
-		echo 'Running the install dependencies stage.'
-		}
-		}
 		stage("Execute Tests"){
 		steps{
-		echo 'Running the execute tests stage.'
+			script{
+			sh 'mvn clean install'
+			}
 		}
 		}
 		stage("Cleanup and Reporting"){
