@@ -1,6 +1,11 @@
 pipeline{
 	
 	agent any
+	
+	tools {
+        maven "MAVEN"
+        jdk "JDK"
+    }
   
   parameters{
   string(name:'Tag to execute', defaultValue:'@SampleTest')
