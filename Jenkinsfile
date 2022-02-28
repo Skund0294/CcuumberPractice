@@ -30,9 +30,4 @@ pipeline{
 		echo 'Running the cleanup and reporting stage.'
 		}
 		}
-		stage("Destroy everything"){
-		steps{
-		echo 'Running the destroy everything stage.'
-		}
-		}
 }}
