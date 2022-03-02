@@ -24,7 +24,7 @@ public class SampleFeature_StepDef {
 
 	}
 
-	@And("^I check the divisibility of the (-?\\d+)$")
+	@And("^I check the divisibility of (-?\\d+)$")
 	public void i_check_the_divisibility(int x) {
 
 		result = obj.playGame(x);
