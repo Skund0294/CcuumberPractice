@@ -1,30 +1,41 @@
 package com.test.stepdefs;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class SampleFeature_StepDef {
 
-	@Given("I am on login page")
-	public void i_am_on_login_page() {
-	    
-	    System.out.println("User is on the login page of the application");
-		
+	FizzBuzzCheck obj = new FizzBuzzCheck();
+	private String result;
+
+	@Given("I want to play a game")
+	public void i_want_to_play_a_game() {
+
+		System.out.println("I am playing a game");
+
 	}
 
-	@When("I enter login credentials")
-	public void i_enter_login_credentials() {
-	    
-		System.out.println("User has typed in the valid credentials");
-	    
+	@When("I have a number")
+	public void i_give_a_number() {
+
+		System.out.println("I have a number with me");
+
 	}
 
-	@Then("I should get logged into my account successfully")
-	public void i_should_get_logged_into_my_account_successfully() {
-	    
-		System.out.println("User should get logged into his account in the application");
-	    
+	@And("^I check the divisibility of the (-?\\d+)$")
+	public void i_check_the_divisibility(int x) {
+
+		result = obj.playGame(x);
+
+	}
+
+	@Then("I print the result")
+	public void i_print_the_result() {
+
+		System.out.println(result);
+
 	}
 
 }
